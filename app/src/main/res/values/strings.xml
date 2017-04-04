@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">ShoppingCart</string>
+    <string name="title_label">Shopping cart demo</string>
+    <string name="loading_label">Loading currencies values...</string>
+    <string name="wait_label">please wait...</string>
+    <string name="me">by Stefano Gramantieri</string>
+</resources>

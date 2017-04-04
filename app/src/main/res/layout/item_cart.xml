@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="5dp">
+
+
+    <LinearLayout
+        android:id="@+id/chat_view_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dp"
+
+        android:background="@drawable/itembg">
+
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+            <TextView
+                android:id="@+id/item_price"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_marginTop="0dp"
+                android:background="@drawable/bground"
+                android:gravity="center"
+                android:layout_marginLeft="10dp"
+                android:textColor="@color/white"
+                android:textAppearance="@style/FashionFont"
+                android:textSize="20sp" />
+
+
+            <TextView
+            android:id="@+id/item_desc"
+            android:gravity="bottom|end"
+            android:layout_alignParentLeft="true"
+            android:layout_gravity="bottom|end"
+            android:lines="1"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="30dp"
+            android:textSize="22sp"
+            android:paddingLeft="50dp"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:textAppearance="@style/TitleFont"
+            />
+            <ImageView
+                android:id="@+id/itemremove"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="60dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/minus" />
+            <ImageView
+                android:id="@+id/itemadd"
+                android:layout_alignParentRight="true"
+                android:layout_width="30dp"
+                android:layout_marginRight="20dp"
+                android:layout_height="30dp"
+                android:src="@drawable/plus" />
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+</RelativeLayout>

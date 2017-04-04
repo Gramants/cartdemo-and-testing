@@ -1,0 +1,94 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.neenbedankt.android-apt'
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "25.0.1"
+
+    defaultConfig {
+        applicationId "com.my.android.shopcart"
+        minSdkVersion 16
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.0"
+        testApplicationId 'com.my.android.shopcart.cucumber.test'
+        testInstrumentationRunner 'com.my.android.shopcart.cucumber.test.Instrumentation'
+
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    sourceSets {
+        androidTest {
+            assets.srcDirs = ['src/androidTest/assets']
+        }
+    }
+
+    lintOptions {
+        disable 'InvalidPackage'
+        abortOnError false
+    }
+
+    packagingOptions {
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/MANIFEST.MF'
+        exclude 'LICENSE.txt'
+        exclude 'META-INF/services/javax.annotation.processing.Processor'
+        exclude 'META-INF/maven/com.google.guava/guava/pom.properties'
+        exclude 'META-INF/maven/com.google.guava/guava/pom.xml'
+
+    }
+}
+
+
+dependencies {
+
+    compile fileTree(dir: 'libs', include: '*.jar')
+    Map<String, String> dependencies = rootProject.ext.dependencies;
+    //UI
+    compile dependencies.appCompat
+    compile dependencies.cardView
+    compile dependencies.recyclerView
+    compile dependencies.design
+    compile dependencies.circularimage
+    compile dependencies.picasso
+    compile dependencies.rippleit
+    compile dependencies.commonlang
+    compile dependencies.butterKnife
+    compile dependencies.materialProgressbar
+    compile dependencies.calligraphy
+    //Retrofit
+    compile dependencies.retrofit
+    compile dependencies.retrofitlogging
+    compile dependencies.retrofitConverterGson
+    compile dependencies.retrofitAdapterRxJava
+    //RxJava
+    compile dependencies.rxAndroid
+    compile dependencies.rxAndroidJava
+    compile dependencies.rxBinding
+    //Dagger
+    apt dependencies.daggercompiler
+    compile dependencies.dagger
+    provided dependencies.glassfish
+    //Espresso
+    androidTestCompile 'com.android.support.test.espresso:espresso-core:2.0'
+    androidTestCompile 'com.android.support.test:testing-support-lib:0.1'
+    androidTestCompile 'com.android.support:support-annotations:25.1.0'
+    //Cucumber plugin
+    androidTestCompile 'info.cukes:cucumber-jvm-deps:1.0.3'
+    androidTestCompile('info.cukes:cucumber-android:1.2.4') { exclude module: 'cucumber-jvm-deps' }
+    androidTestCompile('info.cukes:cucumber-picocontainer:1.2.4') { exclude module: 'cucumber-jvm-deps' }
+
+
+
+    testCompile "org.mockito:mockito-core:2.0.57-beta"
+    testCompile 'junit:junit:4.12'
+    testCompile 'org.mockito:mockito-all:1.10.19'
+    testCompile 'org.assertj:assertj-core:2.5.0'
+
+}

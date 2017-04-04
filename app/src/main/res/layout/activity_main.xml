@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/background"
+    android:orientation="vertical"
+    tools:context="com.my.android.shopcart.com.my.android.shopcart.view.ShoppingCartActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:background="@drawable/toolbarbackground"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        app:titleTextColor="#ffffff"
+        app:subtitleTextColor="#ffffff"
+        android:fitsSystemWindows="true" />
+
+
+
+    <LinearLayout
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        android:id="@+id/footer_section"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:visibility="gone"
+
+        >
+
+
+        <TextView
+            android:id="@+id/total"
+            android:background="@drawable/bubble_in"
+            android:layout_width="wrap_content"
+            android:minWidth="200dp"
+            android:gravity="right"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:textColor="#ffffff" />
+
+
+        <Spinner
+            android:id="@+id/spinner_currencies"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:prompt="@string/loading_label"/>
+
+    </LinearLayout>
+
+    <ListView
+        android:layout_below="@+id/toolbar"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="10dp"
+
+        android:id="@+id/lvMessages"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="70dp"
+        android:scrollbars="none"
+        android:transcriptMode="alwaysScroll"
+        android:divider="@null">
+    </ListView>
+
+</RelativeLayout>
